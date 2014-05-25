@@ -103,12 +103,12 @@ window.plugin.portalslist.getPortals = function() {
     console.log('DATOS',details);
     var player2,time2;
     if (details) {
-      player2 = details.captured && details.captured.capturingPlayerId
-      ? '<span class="nickname">' + details.captured.capturingPlayerId + '</span>'
+      player2 = details.owner 
+      ? '<span class="nickname">' + details.owner + '</span>'
       : null;
       var playerText2 = player2 ? ['owner', player2] : null;
-      time2 = details.captured
-        ? '<span class="TimmerCounter">' + window.formatInterval(Math.floor((Date.now() - details.captured.capturedTime)/1000)) + '</span>'
+      time2 = details.capturedTime
+        ? '<span class="TimmerCounter">' + window.formatInterval(Math.floor((Date.now() - details.capturedTime)/1000)) + '</span>'
         : null;
 
       var sinceText2  = time2 ? ['since', time2] : null;
